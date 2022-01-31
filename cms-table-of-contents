@@ -1,0 +1,37 @@
+Add this code to the </body> section inside the CMS Template page for your blog post.
+You will need to add a target container with an ID where all the links should go.
+
+Make sure that elements on your template page match the selectors I used below. You either need to use the same naming selectors I have here, or you can just rename the selectors in the code.
+
+
+// ----- SECTION LINK GENERATOR --------------------------------------------
+
+        $('#section-links').append(`<ol class="ol-list"></ol>`);
+        $(".rich-text h3").each(function(i, e) {
+            var item = $(this).html();
+            var id = (item.replace(/ /g, '')).replace(/[^\w\s]/gi, '');
+            id = id + '_' + (random(1, 99)).toString();
+
+            $(this).attr("id", id);
+            $('#section-links ol').append(`<li><a id='${id}_click' href='#' class='section-link'>${item}</a></li>`);
+
+            $("#" + id + "_click").on('click', function(event) {
+                event.preventDefault();
+                var target = $("#" + id);
+                if (target.length) {
+
+                    location.hash.replace('#' + id, '');
+                    $('html, body').stop().animate({
+                        scrollTop: target.offset().top - 100
+                    }, 1200);
+                    return false;
+                }
+                return false;
+            });
+
+        });
+
+        function random(min, max) {
+            return Math.floor(Math.random() * (max - min)) + min;
+        }
+        // ----- SECTION LINK GENERATOR --------------------------------------------
