@@ -1,0 +1,128 @@
+<script src="https://fengyuanchen.github.io/datepicker/js/datepicker.js"></script>
+
+<script
+    src="https://combinatronics.com/AlzbetaPevna/a7a1d3af60767e423013f7a98c2df990/raw/34ab60f07ea523fd613f8ea2558fa973110401f6/Datepicker%2520en.js">
+    // date picker 
+</script>
+
+<!--<script src="https://combinatronics.com/AlzbetaPevna/52820690c6562911658e9292a974ae13/raw/4fb8e92e049a76a1544b680d50c5850a414806e7/Multi-step%2520form%2520english.js"></script>
+-->
+<script>
+    $(document).ready(function () {
+        $("#areacode").val("+420");
+        $('#wf-form-Registrace-EN').submit((e) => {
+            e.preventDefault();
+            const data = Object.fromEntries(new FormData(e.target).entries())
+            console.log(data);
+            return false;
+        });
+    });
+</script>
+
+<!-- F’in sweet Webflow Hacks -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/js-cookie/2.2.0/js.cookie.min.js"></script>
+<!--<script>
+  $(document).ready(function(){
+    // store a reference to the select field in the $interestSelectField variable
+    const $firstName = $('#firstname');
+    const $lastName = $('#lastname');
+    const $phoneNumber = $('#phone');
+    const $emailAddress = $('#email');
+    // store a reference to the email form in the $emailForm variable
+    const $emailForm = $('#registration-form');
+    // declare & initialize the customSuccessMessage variable 
+    // with the value of the option selected 
+    // on the interest select field
+    let printFirstName = $firstName.val();
+    let printLastName = $lastName.val();
+    let printPhone = $phoneNumber.val();
+    let printEmail = $emailAddress.val();
+  
+    // every time the option on the select field changes
+    $firstName.change(function(){
+      // assign the new selected option's value to the customSuccessMessage variable
+      printFirstName = $(this).val();
+    });
+    // when the form's submit button is clicked 
+    $emailForm.submit(function(){
+      // if the user selected an option on the select field
+      if(printFirstName){
+        // save the customSuccessMessage's value in a cookie
+        Cookies.set('firstnameTextCookie', printFirstName);
+        // then we submit the form
+        return true;
+      }
+      else{	// else if no option was selected
+        // focus on the select field
+        $firstName.focus();
+        // prevent form submission
+        return false;
+      }
+    });
+    
+    // every time the option on the select field changes
+    $lastName.change(function(){
+      // assign the new selected option's value to the customSuccessMessage variable
+        printLastName = $(this).val();
+      });
+      // when the form's submit button is clicked 
+      $emailForm.submit(function(){
+        // if the user selected an option on the select field
+        if(printLastName){
+          // save the customSuccessMessage's value in a cookie
+          Cookies.set('lastnameTextCookie', printLastName);
+          // then we submit the form
+          return true;
+        }
+        else{	// else if no option was selected
+          // focus on the select field
+          $lastName.focus();
+          // prevent form submission
+          return false;
+        }
+      });
+
+        // every time the option on the select field changes
+    $phoneNumber.change(function(){
+      // assign the new selected option's value to the customSuccessMessage variable
+      printPhone = $(this).val();
+    });
+    // when the form's submit button is clicked 
+    $emailForm.submit(function(){
+      // if the user selected an option on the select field
+      if(printPhone){
+        // save the customSuccessMessage's value in a cookie
+        Cookies.set('phoneTextCookie', printPhone);
+        // then we submit the form
+        return true;
+      }
+      else{	// else if no option was selected
+        // focus on the select field
+        $phoneNumber.focus();
+        // prevent form submission
+        return false;
+      }
+    });
+     // every time the option on the select field changes
+     $emailAddress.change(function(){
+      // assign the new selected option's value to the customSuccessMessage variable
+      printEmail = $(this).val();
+    });
+    // when the form's submit button is clicked 
+    $emailForm.submit(function(){
+      // if the user selected an option on the select field
+      if(printEmail){
+        // save the customSuccessMessage's value in a cookie
+        Cookies.set('emailTextCookie', printEmail);
+        // then we submit the form
+        return true;
+      }
+      else{	// else if no option was selected
+        // focus on the select field
+        $emailAddress.focus();
+        // prevent form submission
+        return false;
+      }
+    });
+    });
+</script>-->
